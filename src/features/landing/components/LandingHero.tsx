@@ -8,8 +8,16 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
+import { useAppDispatch } from "../../../app/hooks";
+import { startSellingNowPressed } from "../landingSlice";
 
 const LandingHero = () => {
+  const dispatch = useAppDispatch();
+
+  const onStartSellingNowPressed = () => {
+    dispatch(startSellingNowPressed());
+  };
+
   return (
     <Flex
       h="100vh"
@@ -48,7 +56,7 @@ const LandingHero = () => {
           entrepeneur? You’ve come to the right website!
         </Text>
 
-        <Button w={"full"} bg="primary">
+        <Button w={"full"} bg="primary" onClick={onStartSellingNowPressed}>
           Start Selling Now!
         </Button>
       </VStack>

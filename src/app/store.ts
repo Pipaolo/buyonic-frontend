@@ -1,9 +1,11 @@
 import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit";
+import { landingReducer } from "../features/landing/landingSlice";
 import { sideNavigationReducer } from "../features/sideNavigation/sideNavigationSlice";
 
 export const store = configureStore({
   reducer: {
     sideNavigation: sideNavigationReducer,
+    landing: landingReducer,
   },
 });
 

@@ -3,9 +3,9 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Layout from "../components/Layout";
 import { PrivateLayout } from "../components/PrivateLayout";
-import LandingFooter from "../features/landing/LandingFooter";
-import LandingHero from "../features/landing/LandingHero";
-import LandingHowItWorks from "../features/landing/LandingHowItWorks";
+import LandingFooter from "../features/landing/components/LandingFooter";
+import LandingHero from "../features/landing/components/LandingHero";
+import LandingHowItWorks from "../features/landing/components/LandingHowItWorks";
 
 const Home: NextPage = () => {
   return (
