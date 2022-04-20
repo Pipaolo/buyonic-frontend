@@ -12,6 +12,7 @@
     "@chakra-ui/react": "^1.8.6",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "@fontsource/montserrat": "^4.5.7",
     "@hookform/resolvers": "^2.8.8",
     "@reduxjs/toolkit": "^1.8.0",
     "axios": "^0.26.1",

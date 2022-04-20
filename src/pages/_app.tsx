@@ -3,6 +3,7 @@ import { Provider } from "react-redux";
 import { store } from "../app/store";
 import { SessionProvider } from "next-auth/react";
 import { ChakraProvider } from "@chakra-ui/react";
+import "@fontsource/montserrat/variable.css";
 import theme from "../theme";
 function BuyonicApp({ Component, pageProps }: AppProps) {
   return (
