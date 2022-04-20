@@ -43,7 +43,7 @@ const LoginForm = () => {
           <FormLabel htmlFor="username">Username</FormLabel>
           <Input
             id="username"
-            placeholder="username"
+            placeholder="Username"
             {...register("username")}
           />
           <FormErrorMessage>
@@ -55,15 +55,15 @@ const LoginForm = () => {
           <Input
             type="password"
             id="password"
-            placeholder="password"
+            placeholder="Username"
             {...register("password")}
           />
           <FormErrorMessage>
             {errors.password && errors.password.message}
           </FormErrorMessage>
         </FormControl>
-        <Button colorScheme="teal" isLoading={isSubmitting} type="submit">
-          Submit
+        <Button bg="primary" w="full" isLoading={isSubmitting} type="submit">
+          Login
         </Button>
       </VStack>
     </form>
