@@ -114,13 +114,7 @@ const LandingHowItWorksForm = () => {
             {errors.email && errors.email.message}
           </FormErrorMessage>
         </FormControl>
-        <Button
-          onClick={onOpen}
-          type={"button"}
-          bg={"primary"}
-          w={"full"}
-          disabled={isLoading}
-        >
+        <Button type={"submit"} bg={"primary"} w={"full"} disabled={isLoading}>
           {isLoading ? (
             <CircularProgress isIndeterminate color={"primary"} size={"2rem"} />
           ) : (
