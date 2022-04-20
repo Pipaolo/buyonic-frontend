@@ -1,6 +1,7 @@
 import axios from "axios";
 import NextAuth, { User } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+import { AuthUser, authUserSchema } from "../../../models/user";
 import api from "../../../utils/axios";
 export default NextAuth({
   pages: {
@@ -36,11 +37,10 @@ export default NextAuth({
             password: credentials!.password,
           });
 
-          if (response.data) {
-            /**
-             * Fetch the user
-             */
-
+          // Make sure that the data we are receiving is a valid
+          // Auth User Model
+          const isUserValid = !!authUserSchema.safeParse(response.data);
+          if (isUserValid) {
             return response.data;
           }
 

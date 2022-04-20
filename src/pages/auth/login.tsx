@@ -5,22 +5,36 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 import Layout from "../../components/Layout";
 import LoginForm from "../../features/login/components/LoginForm";
+import { useIsAdmin } from "../../utils/auth";
 
 const LoginPage: NextPage = () => {
-  const session = useSession();
+  const { status } = useSession();
+  const isAdmin = useIsAdmin();
+
   const router = useRouter();
   useEffect(() => {
-    if (session.status === "authenticated") {
+    if (status === "authenticated") {
+      if (isAdmin) {
+        router.replace("/admin");
+        return;
+      }
       router.replace("/");
     }
-  }, [session, router]);
+  }, [status, router, isAdmin]);
 
-  if (session.status === "authenticated" || session.status === "loading") {
-    return <div></div>;
+  switch (status) {
+    case "loading":
+      return <div></div>;
   }
 
   return (
-    <Layout bg="gray.800" alignItems="center" justifyContent={"center"}>
+    <Flex
+      h="100vh"
+      bg="primary"
+      w="full"
+      alignItems="center"
+      justifyContent={"center"}
+    >
       <Flex
         textAlign={"center"}
         flexDir="column"
@@ -35,7 +49,7 @@ const LoginPage: NextPage = () => {
         </Text>
         <LoginForm />
       </Flex>
-    </Layout>
+    </Flex>
   );
 };
 
