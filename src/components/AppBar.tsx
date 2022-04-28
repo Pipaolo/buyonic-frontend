@@ -18,12 +18,14 @@ import {
   selectSideNavigation,
   toggleSideNavigation,
 } from "../features/sideNavigation/sideNavigationSlice";
+import { useRouter } from "next/router";
 
 const AppBar = () => {
-  const sideNavigation = useAppSelector(selectSideNavigation);
-  const dispatch = useAppDispatch();
-  const { data, status } = useSession();
-  const user = data?.user;
+  const router = useRouter();
+
+  const onLogoPressed = () => {
+    router.push("/");
+  };
 
   return (
     <HStack
@@ -35,7 +37,12 @@ const AppBar = () => {
       top="0"
       zIndex={"1"}
     >
-      <Image src="/buyonic-logo.png" alt="" />
+      <Image
+        cursor={"pointer"}
+        onClick={onLogoPressed}
+        src="/buyonic-logo.png"
+        alt=""
+      />
     </HStack>
   );
 };
