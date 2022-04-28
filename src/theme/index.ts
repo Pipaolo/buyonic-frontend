@@ -1,5 +1,14 @@
 import { theme as defaultTheme, extendTheme } from "@chakra-ui/react";
 const theme = extendTheme({
+  components: {
+    Progress: {
+      baseStyle: {
+        filledTrack: {
+          bg: "primary",
+        },
+      },
+    },
+  },
   fonts: {
     ...defaultTheme.fonts,
     heading: "Montserrat, sans-serif",

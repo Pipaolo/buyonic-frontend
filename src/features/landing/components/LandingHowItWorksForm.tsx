@@ -133,7 +133,6 @@ const LandingHowItWorksForm = () => {
               to date information about the app and the future of the platform.
             </Text>
           </ModalBody>
-
           <ModalFooter></ModalFooter>
         </ModalContent>
       </Modal>

@@ -5,6 +5,7 @@ import {
   Flex,
   HStack,
   Icon,
+  Image,
   Menu,
   MenuButton,
   Text,
@@ -24,49 +25,18 @@ const AppBar = () => {
   const { data, status } = useSession();
   const user = data?.user;
 
-  const onLogoutPressed = async () => {
-    await signOut();
-  };
-  const onToggleSideNavigationPressed = () => {
-    dispatch(toggleSideNavigation(!sideNavigation.isVisible));
-  };
-
   return (
-    <Flex
-      bg="secondary"
-      p={"4"}
-      h="appbar"
-      alignItems="center"
-      justifyContent={"space-between"}
+    <HStack
+      p="4"
+      bg={"white"}
+      w="full"
+      display="flex"
+      position={"sticky"}
+      top="0"
+      zIndex={"1"}
     >
-      <Box
-        h="full"
-        display={"flex"}
-        alignItems="center"
-        cursor={"pointer"}
-        transition="all"
-        transitionDuration={"400ms"}
-        rounded="lg"
-        onClick={onToggleSideNavigationPressed}
-        _hover={{
-          ringColor: "primary",
-          ring: "2",
-        }}
-      >
-        <Icon as={HiMenu} h="8" w="8" color={"white"} />
-      </Box>
-      <Button
-        variant="link"
-        color="primary"
-        alignItems={"center"}
-        justifyContent="center"
-        gap="1"
-      >
-        <Text fontWeight={"bold"} as="span">
-          {user?.username}
-        </Text>
-      </Button>
-    </Flex>
+      <Image src="/buyonic-logo.png" alt="" />
+    </HStack>
   );
 };
 
