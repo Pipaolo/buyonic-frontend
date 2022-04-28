@@ -1,4 +1,9 @@
-import { CircularProgress, FlexProps, VStack } from "@chakra-ui/react";
+import {
+  CircularProgress,
+  FlexProps,
+  StackProps,
+  VStack,
+} from "@chakra-ui/react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
@@ -6,7 +11,7 @@ import SideNavigationBar from "../features/sideNavigation/SideNavigationBar";
 import { useIsAdmin } from "../utils/auth";
 import AppBar from "./AppBar";
 import Layout from "./Layout";
-interface IProps extends FlexProps {}
+interface IProps extends StackProps {}
 
 export const AdminPrivateLayout = ({ children, ...restProps }: IProps) => {
   const { isAdmin, isLoading } = useIsAdmin();
