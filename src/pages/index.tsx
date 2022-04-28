@@ -1,6 +1,7 @@
 import { HStack, Text, VStack, Image, Box } from "@chakra-ui/react";
 import type { NextPage } from "next";
 import Head from "next/head";
+import AppBar from "../components/AppBar";
 import Layout from "../components/Layout";
 import { PrivateLayout } from "../components/PrivateLayout";
 import LandingFooter from "../features/landing/components/LandingFooter";
@@ -22,17 +23,7 @@ const Home: NextPage = () => {
         justifyContent={"center"}
       >
         {/* TODO:  Change to a dynamic appbar */}
-        <HStack
-          p="4"
-          bg={"white"}
-          w="full"
-          display="flex"
-          position={"sticky"}
-          top="0"
-          zIndex={"1"}
-        >
-          <Image src="/buyonic-logo.png" alt="" />
-        </HStack>
+        <AppBar />
         <LandingHero />
         <LandingHowItWorks />
         <LandingFooter />

@@ -1,13 +1,13 @@
-import { Flex, FlexProps } from "@chakra-ui/react";
+import { Flex, FlexProps, Stack, StackProps } from "@chakra-ui/react";
 import AppBar from "./AppBar";
 
-interface IProps extends FlexProps {}
+interface IProps extends StackProps {}
 
 const Layout = ({ children, ...restProps }: IProps) => {
   return (
-    <Flex w="full" h="100vh" bg="primary" flexDir={"column"} {...restProps}>
+    <Stack w="full" h="100vh" bg="primary" flexDir={"column"} {...restProps}>
       {children}
-    </Flex>
+    </Stack>
   );
 };
 
