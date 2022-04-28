@@ -17,6 +17,5 @@ export const signupSubmitted = createAsyncThunk<void, SignUpForm>(
       ...currentState.form,
       ...payload,
     };
-    console.log(form);
   }
 );
